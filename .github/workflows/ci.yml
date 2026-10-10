@@ -14,6 +14,12 @@ jobs:
 
       - name: Mostrar archivos
         run: ls
+        
+      - name: Construir imagen Docker
+        run: docker build -t mi-app .
 
+      - name: Ejecutar contenedor
+        run: docker run -d -p 8080:80 mi-app
+        
       - name: Mensaje
         run: echo "Pipeline ejecutado correctamente"
